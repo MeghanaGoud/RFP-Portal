@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DNOW RFP</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../static/css/images/arrow.png" type="image/gif" sizes="16x16">
+    <!--bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <!--googlefonts-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--external style sheets-->
+    <link rel="stylesheet" type="text/css" href="../static/css/sheet.css">
+    <!--static lists-->
+	
+</head>
+<body>
+
+	<!--navbar-->
+	<nav class="navbar navbar-expand-lg navbar-light " style="padding: 0px;font-family: arial;">
+		  	<a class="navbar-brand" href="#" style="margin-left: 30px;">
+		  		<img src="../static/css/images/TMSfirstlogo.svg">
+		  	</a>
+		  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+		    	<span class="navbar-toggler-icon menu-toggler"></span>
+		  	</button>
+
+	  		<div class="collapse navbar-collapse nav-menu" id="menu">
+	    		<ul class="navbar-nav mr-auto pull-right">
+	      			<li class="nav-item">
+	        			<a class="nav-link" href="#">Home</a>
+	      			</li>
+				    <li class="nav-item">
+				        <a class="nav-link"  data-toggle="modal" data-target="#login-form" class="login">  		
+						Login</a>
+				    </li>
+	      			<li class="nav-item">
+	        			<a class="nav-link" href="#contacts">Contact Us</a>
+	      			</li>
+	    		</ul>
+			</div>
+	</nav>	
+
+	<!--banner-->
+	<div class="banner">
+	</div>
+
+	<!--content-section-->
+	<div class="content">
+		<div class="content-heading">
+			<h1><i>Request For Pricing (RFP) for DNOW. <span>"DistributionNOW"</span> - DNOW</i></h1>
+		</div>
+		<div class="content-matter">
+			<p>By filling in the below details you agree to willingly participate in the Full Truck Load Hot Shot and Local Deliveries Request For Pricing (RFP) for DNOW.This RFP is for North America only and TMSForce are doing this on behalf of DNOW.</p>
+			<p>You agree that</p>
+			<ul class="content-points">
+	            <li><i class="fa fa-angle-double-right"></i>you are not directly or indirectly employed by DNOW or TMSforce.</li>
+	            <li><i class="fa fa-angle-double-right"></i>You will not discuss to participate in any forum to discuss this RFP.</li>
+	            <li><i class="fa fa-angle-double-right"></i>You have not contacted any DNOW personnel in any means other than official communication received via email.</li>
+			</ul>
+		</div>
+		<div>
+			<form class="container" action="http://localhost:5000/signup" method="POST">
+				<div class="content-form">
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Name:</label>
+						<div class="col-sm-10 ">
+	      					<input type="text" class="form-control" id ="name" name="name" placeholder="Enter Name" required>
+	      				</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Email:</label>
+						<div class="col-sm-10 ">
+	      					<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+	      				</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Company:</label>
+						<div class="col-sm-10 ">
+	      					<input type="text" class="form-control" id="company" name="company" placeholder="Enter  your Company name" required>
+	      				</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-form-label  col-sm-2 ">Number:</label>
+						<div class="col-sm-10 ">
+	      					<input type="number" class="form-control " id="phoneno" name="phoneno" placeholder="Enter your number" pattern="[0-9]{10}"/ max-length="10" required>
+	      				</div>
+					</div>
+					<div class="form-group row">
+						<div class="ml-auto col-sm-3">
+	        				<button type="submit" class="btn accept">Accept</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="content-matter matter2">
+			<p>If you wish to receive any specific clarifications regarding the bid, please write to <a href="#">Tim(tim@tmsforce.com)</a> , <a href="#">Bob(LTLRFP@TMSforce.com)</a> or <a href="#">Vhine(vhine@tmsforce.com)</a></p>
+			<p>Once your acceptance is recevied and processed, you shall receive an username and password to login and access all the documents required by you for the RFP.</p>
+		</div>
+	</div>
+
+	<!--contact section-->
+	<div class="contact" id="contacts">
+		<div class="container">
+			<div class="contact-heading">
+				<span><i>Connect to us</i></span>
+			</div>
+			<form class=" container" action="http://localhost:5000/contact" method="POST">
+				<div class="content-form">
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Name:</label>
+						<div class="col-sm-10 ">
+	      					<input type="text" class="form-control" name="cname" placeholder="Enter Name" required>
+	      				</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Email:</label>
+						<div class="col-sm-10 ">
+	      					<input type="email" class="form-control" name="cemail" placeholder="Enter email" required>
+	      				</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Message:</label>
+						<div class="col-sm-10 ">
+	      					<textarea type="text" class="form-control" placeholder="Enter  your Message" required name="cmessage"></textarea>
+	      				</div>
+					</div>
+					<div class="form-group row">
+						<div class="ml-auto col-sm-3">
+	        				<button type="submit" class="btn accept">Submit</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!--modal pop-up login-->
+	<div class="modal fade" id="login-form" data-keyboard="false" data-backdrop="static">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+      			<div class="modal-header">
+			        <h3 class="modal-title" id="exampleModalLabel"><i>Log in</i></h3>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			            <span aria-hidden="true">&times;</span>
+			        </button>
+      			</div>
+      			<div class="modal-body modal-matter">
+	        		<p>Your login credentials are sent by email once you have accepted to participate in the RFP. If you have not accepted to participate in the bid, do so by clicking here.</p>
+					<p>If you wish to receive any specific clarifications regarding the bid, please write to <a href="#">Tim(tim@tmsforce.com)</a>, <a href="#">Bob(LTLRFP@TMSforce.com)</a> or <a href="#">Vhine(vhine@tmsforce.com)</a></p>
+					<form action="http://localhost:5000/Login" method="POST">
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Email:</label>
+							<div class="col-sm-10 ">
+	      						<input type="email" class="form-control" name="Uemail" placeholder="Enter email" required>
+	      					</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Password:</label>
+							<div class="col-sm-10 ">
+		      					<input type="Password" class="form-control" name="password" placeholder="Enter your password" required>
+		      				</div>
+						</div>
+					
+						<div class="form-group row">
+							<div class="ml-auto col-sm-3">
+	        					<button  type="submit" class="btn accept">Sign in</button>
+	        				</div>
+	        			</div>
+        			</form>
+      			</div>
+    		</div>
+  		</div>
+	</div>
+
+
+<!--jquery and popper.js cdn links-->
+<script src="../static/js/jquery-1.11.2.js"></script>
+<!-- <script src="../static/js/signUp.js"></script>
+ --><!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+<!--javascript cdn links-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+</body>
+</html>
