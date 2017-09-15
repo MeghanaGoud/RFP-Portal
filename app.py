@@ -15,10 +15,10 @@ APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 print('app')
 
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
-app.config['MYSQL_DATABASE_DB'] = 'project'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+app.config['MYSQL_DATABASE_USER'] = 'rfpportal'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Florid@1'
+app.config['MYSQL_DATABASE_DB'] = 'rfpportal'
+app.config['MYSQL_DATABASE_HOST'] = 'rfpportal.db.11185648.hostedresource.com'
 mysql.init_app(app)
 
 
