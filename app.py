@@ -30,7 +30,7 @@ print('mainpage')
 
 
 # procedure for login
-@app.route('/Login', methods=['post', 'get'])
+@app.route('/Login', methods=['post'])
 def Login():
     print('entered into login session')
     user_mail = request.form['Uemail']
@@ -58,7 +58,7 @@ def Login():
 
 
 # uploading zip file
-@app.route('/upload', methods=['POST', 'get'])
+@app.route('/upload', methods=['POST'])
 def upload():
     print('creating target')
     target = os.path.join(APP_ROOT, 'zipfiles/')
@@ -77,7 +77,7 @@ def upload():
 
 
 # procedure for registration
-@app.route('/signup', methods=['POST', 'get'])
+@app.route('/signup', methods=['POST'])
 def signup():
     print('fetching from form')
     _name = request.form['name']
@@ -130,7 +130,7 @@ def signup():
 
 
 # procedure for contact
-@app.route('/contact', methods=['POST', 'get'])
+@app.route('/contact', methods=['POST'])
 def contact():
     print('fetching from contact form')
     _cname = request.form['cname']
