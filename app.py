@@ -18,7 +18,8 @@ print('app')
 app.config['MYSQL_DATABASE_USER'] = 'rfpportal'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'Florid@1'
 app.config['MYSQL_DATABASE_DB'] = 'rfpportal'
-app.config['MYSQL_DATABASE_HOST'] = 'rfpportal.db.11185648.hostedresource.com'
+app.config['MYSQL_DATABASE_HOST'] = '166.62.8.3'
+app.config['MYSQL_DATABASE_PORT'] = '3306'
 mysql.init_app(app)
 
 
@@ -90,6 +91,7 @@ def signup():
     print(_number)
     if _name:
         con = mysql.connect()
+        print('connected to db')
         cursor = con.cursor()
         print('connected to cursor')
         cursor.callproc('registerUser', (_name, _email, _company, _number))
@@ -173,5 +175,5 @@ def contact():
     return 'message sent succesfully'
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=5000, debug=True)
     
