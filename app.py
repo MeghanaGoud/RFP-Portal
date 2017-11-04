@@ -15,11 +15,10 @@ APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 print('app')
 
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = 'rfpportal'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Florid@1'
-app.config['MYSQL_DATABASE_DB'] = 'rfpportal'
-app.config['MYSQL_DATABASE_HOST'] = '166.62.8.3'
-app.config['MYSQL_DATABASE_PORT'] = '3306'
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
+app.config['MYSQL_DATABASE_DB'] = 'project'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
 
 
@@ -94,9 +93,17 @@ def signup():
         print('connected to db')
         cursor = con.cursor()
         print('connected to cursor')
-        cursor.callproc('registerUser', (_name, _email, _company, _number))
+        
+        cursor.execute("""INSERT INTO signup (user_name, user_email, user_company, user_phoneno) \
+                        VALUES (%s, %s, %s,  %s)""", (_name, _email, _company, _number ))
+        con.commit()
         print('connected and stored in db')
-        # password generation
+        cursor.execute("SELECT user_name, user_email FROM signup")
+        data = cursor.fetchall()
+        for row in data:
+            print(row[0], row[1])
+        print('connected and stored in db')
+        # passwordgeneration
         s = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ'
         pwdlen = 6
         user_password = ''.join(random.sample(s, pwdlen))
@@ -123,7 +130,8 @@ def signup():
         # returns the entire message flattened as a string
         server.quit()  # coming out of the server
         print('mail sent succesfully')
-        cursor.callproc('loginuser', (_email, user_password))
+        cursor.execute("""INSERT INTO login (useremail, userpassword)\
+                        VALUES (%s,%s)""", (_email, user_password))
         print('login details are stored')
         con.commit()
         cursor.close()
@@ -145,7 +153,9 @@ def contact():
         cnx = mysql.connect()
         cursor = cnx.cursor()
         print('connected to cursor')
-        cursor.callproc('contact', (_cname, _cemail, _cmessage))
+        cursor.execute("""INSERT INTO contact (con_name, con_email, con_message)\
+                        VALUES (%s, %s, %s)""", (_cname, _cemail, _cmessage))
+
         print('connected and stored in db')
         cnx.commit()
         cursor.close()
@@ -175,5 +185,5 @@ def contact():
     return 'message sent succesfully'
 
 if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+    app.run(port=5002)
     
